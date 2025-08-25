@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+mat-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+mat-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.top-rated {
+  border: 2px solid gold;
+}
+mat-card {
+  width: 250px;              /* fix card width */
+  margin: 10px;
+}
+
+mat-card img {
+  width: 100%;               /* take full width of card */
+  height: 250px;             /* fixed height */
+  object-fit: cover;         /* crop instead of stretching */
+  border-radius: 8px;        /* smooth rounded corners */
+}
+
+
