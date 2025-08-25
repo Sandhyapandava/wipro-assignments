@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-3 rounded" style="max-width: 320px; margin: auto;">
+    <div class="card-body">
+      <!-- Previous expression (e.g., "7 +") -->
+      <div class="text-muted text-end small">
+        {{ previousValue }} {{ operator }}
+      </div>
+
+      <!-- Current input -->
+      <input type="text" [(ngModel)]="currentInput" class="form-control text-end mb-3 fs-4" disabled />
+
+      <!-- Buttons grid -->
+      <div class="row g-2">
+        <div class="col-3" *ngFor="let num of numbers">
+          <button class="btn btn-outline-primary w-100 fs-5" (click)="appendNumber(num)">{{ num }}</button>
+        </div>
+
+        <div class="col-3" *ngFor="let op of operators">
+          <button class="btn btn-outline-danger w-100 fs-5" (click)="chooseOperator(op)">{{ op }}</button>
+        </div>
+
+        <div class="col-6">
+          <button class="btn btn-secondary w-100 fs-5" (click)="clear()">C</button>
+        </div>
+        <div class="col-6">
+          <button class="btn btn-success w-100 fs-5" (click)="calculate()">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
